@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu</title>
+  <style>
+    h2{
+      text-align: center;
+      font-size: 50px;
+    }
+    .dropbtn {
+
+      padding: 19px;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 1s;
+    }
+
+    .dropbtn:hover {
+      background-color: rgba(0, 0, 0, 0.479);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 140px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 15px 19px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h2>Dropdown menu</h2>
+
+
+  <div class="dropdown">
+    <button onclick="programmingList()" class="dropbtn">Programming</button>
+    <div id="myDropdown1" class="dropdown-content">
+      <a href="#java" onclick="java()">Java</a>
+      <a href="#python" onclick="python()">Python</a>
+      <a href="#c++" onclick="cpp()">C++</a>
+      <a href="#c" onclick="c()">C</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button onclick="databaseList()" class="dropbtn">Database</button>
+    <div id="myDropdown2" class="dropdown-content">
+      <a href="#mysql" onclick="mysql()">MySQL</a>
+      <a href="#mdb" onclick="mDB()">MongoDB</a>
+      <a href="#cass" onclick="cassandra()">Cassandra</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button onclick="WebTechList()" class="dropbtn">Web Technology</button>
+    <div id="myDropdown3" class="dropdown-content">
+      <a href="#php" onclick="php()">PHP</a>
+      <a href="#css" onclick="css()">CSS</a>
+      <a href="#js" onclick="js()">JavaScript</a>
+    </div>
+  </div>
+  <script>
+
+    function programmingList() {
+      document.getElementById("myDropdown1").classList.toggle("show");
+    }
+
+    function databaseList() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+    }
+
+
+    function WebTechList() {
+      document.getElementById("myDropdown3").classList.toggle("show");
+    }
+
+
+    function java() {
+      window.location.replace("https://www.w3schools.com/java/default.asp");
+    }
+    function python() {
+      window.location.replace("https://www.w3schools.com/python/default.asp");
+    }
+    function cpp() {
+      window.location.replace("https://www.w3schools.com/cs/index.php");
+    }
+    function c() {
+      window.location.replace("https://www.w3schools.com/c/index.php");
+    }
+    function mysql() {
+      window.location.replace("https://www.w3schools.com/sql/default.asp");
+    }
+    function mDB() {
+      window.location.replace("https://www.w3schools.com/mongodb/");
+    }
+    function cassandra() {
+      window.location.replace("https://www.w3schools.blog/cassandra-tutorial");
+    }
+    function php() {
+      window.location.replace("https://www.w3schools.com/php/default.asp");
+    }
+    function css() {
+      window.location.replace("https://www.w3schools.com/css/default.asp");
+    }
+    function js() {
+      window.location.replace("https://www.w3schools.com/js/default.asp");
+    }
+
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }  
+  </script>
+</body>
+
+</html>

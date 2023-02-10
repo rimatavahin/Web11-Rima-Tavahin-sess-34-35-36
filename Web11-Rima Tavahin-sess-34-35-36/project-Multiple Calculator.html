@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Multiple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: lightskyblue;
+        }
+
+        #container {
+            width: 700px;
+            height: 300px;
+            /* background-color: red; */
+            border-radius: 20px;
+            margin: 150px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white
+
+        }
+
+        #First-Number,
+        #secondary-number {
+            width: 125px;
+            height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #First-Number {
+            border: solid 4px orangered;
+            border-radius: 50%;
+        }
+
+        #secondary-number {
+            border: solid 4px green;
+            border-radius: 50%;
+
+        }
+
+        #add,
+        #equal {
+            font-weight: bold;
+            font-size: 40px;
+            padding: 5px;
+        }
+
+        input {
+
+            width: 150px;
+            height: 30px;
+            padding-left: 25px;
+            border: 2px solid purple;
+            font-size: 18px;
+        }
+
+        button {
+            width: 100px;
+            height: 35px;
+            margin: 5px;
+            /* border: 1px solid blue; */
+            background: red;
+            color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="First-Number">7</div>
+        <div id="add">*</div>
+        <div id="secondary-number">10</div>
+        <div id="equal">=</div>
+        <div>
+            <input type="text" id="txt">
+        </div>
+        <div>
+            <button id="btn">Check</button>
+        </div>
+    </div>
+    <script>
+
+
+        let firstNumber = parseInt(Math.random() * 10);
+        let secondNumber = parseInt(Math.random() * 10);
+
+
+        let total = firstNumber * secondNumber;
+
+
+        let primary = document.getElementById('First-Number');
+        primary.innerHTML = `<p>${firstNumber}</p>`;
+
+        let secondary = document.getElementById('secondary-number');
+        secondary.innerHTML = `<p>${secondNumber}</p>`
+
+        let button = document.getElementById('btn')
+
+        button.addEventListener('click', function () {
+
+            let txt = document.getElementById('txt').value;
+            txt = Number(txt);
+
+            if (txt === total) {
+                alert('Correct');
+                window.location.reload()
+            } else {
+                alert('Sorry. Incorrect. The correct answer ' + total + '.')
+                window.location.reload()
+
+            }
+        });
+
+    </script>
+</body>
+
+</html>

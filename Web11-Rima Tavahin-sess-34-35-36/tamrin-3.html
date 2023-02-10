@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #txtinp {
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            padding: 5px 8px;
+            font-size: 16px;
+        }
+
+        #here {
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            padding: 5px 8px;
+
+        }
+
+
+        #_copy {
+            width: 150px;
+            height: 50px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input id="txtinp" type="text">
+    <button onclick="Mycopy()" id="_copy">Copy</button>
+    <h1 onpaste="txt()" id="here" contenteditable="true">Paste : </h1><br>
+    <script>
+
+        function Mycopy() {
+            let x = document.getElementById('txtinp')
+            x.select()
+            x.setSelectionRange(0, 99999)
+            navigator.clipboard.writeText(x.value)
+            alert('Copy to clipboard !')
+        }
+
+    </script>
+</body>
+
+</html>

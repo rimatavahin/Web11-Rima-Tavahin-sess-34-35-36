@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="Result1"></h2>
+    <h2 id="Result2"></h2>
+
+    <script>
+
+        let MyText_1 = "Free Learn In My Site.";
+        let MyText_2 = "Free Learn In Free Learn in My Site";
+
+        let result_1 = document.getElementById("Result1");
+        let result_2 = document.getElementById("Result2");
+
+        result_1.innerHTML = MyText_1.indexOf("Learn");
+        result_2.innerHTML = MyText_2.lastIndexOf("Learn");
+
+    </script>
+
+</body>
+
+</html>

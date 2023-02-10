@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu keshoyi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .titleBox {
+            width: 200px;
+            height: 25px;
+            background-color: #666;
+            color: #FFF;
+            /* font-size: 14px; */
+            font-weight: bold;
+            text-align: right;
+            display: block;
+            cursor: pointer;
+            padding: 4px;
+            text-align: center;
+            border-bottom: 1px dashed #CCC;
+            overflow: hidden;
+        }
+
+        .titleBox,
+        .contentBox,
+        .Box {
+            position: relative;
+        }
+
+        .contentBox {
+            width: 200px;
+            height: 100px;
+            display: none;
+            font-weight: bold;
+            background-color: #F8F8F8;
+            /* padding: 4px; */
+            padding-top: 15px;
+            /* display: flex; */
+            text-align: center;
+            overflow: hidden;
+
+        }
+
+        .Box {
+            border: 1px solid #F0F0F0;
+            width: 208px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Box" class="Box">
+
+        <div class="titleBox" onclick="menu(1);">Title 1</div>
+        <div id="probox1content" class="contentBox">Lorem, ipsum.</div>
+
+        <div class="titleBox" onclick="menu(2);">Title 2</div>
+        <div id="probox2content" class="contentBox">Lorem, ipsum.</div>
+
+        <div class="titleBox" onclick="menu(3);">Title 3</div>
+        <div id="probox3content" class="contentBox">Lorem, ipsum.</div>
+        <div class="titleBox" onclick="menu(4);">Title 4</div>
+        <div id="probox4content" class="contentBox">
+            Lorem, ipsum.
+        </div>
+    </div>
+    <script>
+
+        let contentHeight = 34;
+        let TimeToSlide = 300.0;
+        let openbox = '';
+        function menu(index) {
+            let divID = "probox" + index + "content";
+            if (openbox == divID) {
+                divID = '';
+            }
+            setTimeout("animate(" + new Date().getTime() + "," + TimeToSlide + ",'" + openbox + "','" + divID + "')", 33);
+            openbox = divID;
+        }
+        function animate(lastTick, timeLeft, closingId, openingId) {
+            let curTick = new Date().getTime();
+            let elapsedTicks = curTick - lastTick;
+            let opening = (openingId == '') ? null : document.getElementById(openingId);
+            let closing = (closingId == '') ? null : document.getElementById(closingId);
+
+            if (timeLeft <= elapsedTicks) {
+                if (opening != null) {
+                    opening.style.height = contentHeight + 'px';
+                }
+                if (closing != null) {
+                    closing.style.display = 'none';
+                    closing.style.height = '0px';
+                }
+                return;
+            }
+            timeLeft -= elapsedTicks;
+            let newClosedHeight = Math.round((timeLeft / TimeToSlide) * contentHeight);
+            if (opening != null) {
+                if (opening.style.display != 'block') {
+                    opening.style.display = 'block';
+                }
+                opening.style.height = (contentHeight - newClosedHeight) + 'px';
+            }
+            if (closing != null) {
+                closing.style.height = newClosedHeight + 'px';
+            }
+            setTimeout("animate(" + curTick + "," + timeLeft + ",'" + closingId + "','" + openingId + "')", 33);
+        }
+    </script>
+    </head>
+</body>
+
+</html>

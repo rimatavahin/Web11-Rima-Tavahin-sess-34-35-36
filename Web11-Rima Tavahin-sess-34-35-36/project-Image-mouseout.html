@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-mouseout</title>
+
+    <style>
+        body {
+            background-color: rgb(192, 235, 250);
+        }
+
+        figure {
+            width: 200px;
+            height: 300px;
+            margin: 100px auto;
+            /* border: 1px solid black; */
+
+        }
+
+        img {
+
+            transition: 1s;
+        }
+
+        figure:hover>img {
+            filter: contrast(70%);
+            box-shadow: 0 0 40px 5px gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <figure class='card'>
+        <img src="img/c5bc0b38ee086648cab3082a92cbbda55f995281.jpeg" alt="">
+    </figure>
+</body>
+<script>
+    let txt = document.getElementsByClassName('card')[0]
+    txt.addEventListener('mouseout', function (e) {
+        let x = ((e.offsetX) / 5) - 30
+        let y = ((e.offsetY) / 5) - 40
+        txt.style.transform = 'perspective(900px)rotateY(' + x + 'deg)rotateX(' + y + 'deg)'
+    })
+
+
+</script>
+</body>
+
+</html>

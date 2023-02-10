@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse pointer</title>
+    <style>
+        body {
+            background-color: rgb(205, 242, 252);
+        }
+
+        li{
+            font-size: 30px;
+            line-height: 55px;
+            margin: 10px 15px;
+
+        }
+
+        h1{
+            margin: 25px;
+            font-size: 40px;
+            text-align: center;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="default">Mouse Pointer</h1>
+
+    <ul>
+
+        <li id="pointer">Pointer</li>
+
+        <li id="move">Move</li>
+
+        <li id="not-allowed">Not-allowed</li>
+
+        <li id="progress">Progress</li>
+
+        <li id="col-resize">Column-resize</li>
+
+        <li id="cell">Cell</li>
+
+        <li id="text">Text</li>
+
+        <li id="wait">Wait</li>
+
+        <li id="zoom-in">Zoom-in</li>
+
+        <li id="zoom-out">Zoom-out</li>
+
+    </ul>
+    <script>
+        document.getElementById("pointer").style.cursor = "pointer";
+
+        document.getElementById("move").style.cursor = "move";
+
+        document.getElementById("not-allowed").style.cursor = "not-allowed";
+
+        document.getElementById("progress").style.cursor = "progress";
+
+        document.getElementById("col-resize").style.cursor = "col-resize";
+
+        document.getElementById("cell").style.cursor = "cell";
+
+        document.getElementById("text").style.cursor = "text";
+
+        document.getElementById("wait").style.cursor = "wait";
+
+        document.getElementById("zoom-in").style.cursor = "zoom-in";
+
+        document.getElementById("zoom-out").style.cursor = "zoom-out";
+
+        document.getElementById("default").style.cursor = "default";
+    </script>
+</body>
+
+</html>

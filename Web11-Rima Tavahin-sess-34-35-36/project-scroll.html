@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+        }
+
+        main {
+            padding: 50px;
+            background-color: black;
+        }
+
+        main h1 {
+            font-size: 50px;
+            color: white;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        main p {
+            font-size: 25px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 60px;
+            text-align: justify;
+        }
+
+        #scroll-place {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        #progressbar {
+            position: fixed;
+            top: 0px;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            animation: hue-anim 6s linear infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @keyframes hue-anim {
+
+            0%,
+            100% {
+                filter: hue-rotate(0deg);
+            }
+
+            50% {
+                filter: hue-rotate(360deg);
+            }
+
+        }
+
+        #progressbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            filter: blur(10px);
+        }
+
+        #progressbar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #008aff, #00ffe7);
+            filter: blur(30px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progressbar"></div>
+    <div id="scroll-place"></div>
+    <main>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+        <h1> Make scroll with linear-gradient </h1>
+        <br><br><br><br>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ea tenetur iure aut provident nisi eaque
+            iste ut tempora optio earum deserunt, dignissimos harum quidem dolorem numquam necessitatibus alias ipsum
+            esse? Expedita quidem voluptates, rerum accusamus maiores, error, aliquam omnis officia blanditiis in esse.
+            Expedita officiis assumenda vitae maiores inventore fugit sunt non. Ea similique iste sed nihil in eveniet
+            nemo molestiae dolores consequuntur, quia voluptate cupiditate perspiciatis nostrum ducimus consectetur
+            quos, rem laboriosam. Quis a recusandae eius fugit voluptatum modi, blanditiis impedit deserunt ab excepturi
+            rem molestias dicta doloremque in. Molestias pariatur ullam in neque eaque similique possimus perferendis?
+        </p>
+        <br><br><br><br>
+    </main>
+    <script>
+        let progressbar = document.getElementById('progressbar')
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onload = function () {
+            progressbar.style.height = 0 + "%";
+        }
+
+        window.onscroll = function () {
+            let progressbarHeight = (window.pageYOffset / totalHeight) * 100;
+            progressbar.style.height = progressbarHeight + "%";
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

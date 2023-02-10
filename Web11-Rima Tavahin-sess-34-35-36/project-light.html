@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: rgb(205, 242, 252);
+        }
+
+
+        .button {
+            
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            margin: 65px 40px;
+            cursor: pointer;
+        }
+
+        #controlPanel {
+            float: left;
+            padding-top: 15px;
+        }
+
+
+        #traffic-light {
+            height: 550px;
+            width: 200px;
+            float: left;
+            background-color: #333;
+            border-radius: 45px;
+            margin: 30px 0;
+            padding: 20px;
+        }
+
+        .bulb {
+            height: 150px;
+            width: 150px;
+            background-color: #111;
+            border-radius: 50%;
+            margin: 30px auto;
+            transition: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controlPanel">
+        <!-- <h1 id="stopButton" class="button">Stop</h1>
+        <h1 id="slowButton" class="button">Slow</h1>
+        <h1 id="goButton" class="button">Go</h1>
+        <h1 id="clearLights" class="button">Clear</h1> -->
+
+        <h2 id="stopButton" class="button" style="background-color: red; color: black;">Stop</h2>
+        <h2 id="slowButton" class="button" style="background-color: yellow; color: black;">Slow</h2>
+        <h2 id="goButton" class="button" style="background-color: green; ">Go</h2>
+        <h2 id="clearLights" class="button">Clear</h2>
+        <h2 id="autoLights" class="button" style="background-color: rgb(107, 107, 107); color: white;">Auto</h2>
+    </div>
+
+    <div id="traffic-light">
+        <div id="stopLight" class="bulb"></div>
+        <div id="slowLight" class="bulb"></div>
+        <div id="goLight" class="bulb"></div>
+    </div>
+
+    <script>
+        var counter = 2;
+        var timerId = 0;
+
+        document.getElementById('stopButton').onclick = stopRed;
+        document.getElementById('slowButton').onclick = slowYellow;
+        document.getElementById('goButton').onclick = goGreen;
+        document.getElementById('clearLights').onclick = clearLights;
+        document.getElementById('autoLights').onclick = autoLights;
+
+
+        function stopRed() {
+            document.getElementById('slowLight').style.backgroundColor = "black";
+            document.getElementById('goLight').style.backgroundColor = "black";
+            document.getElementById('stopLight').style.backgroundColor = "red";
+        }
+
+        function slowYellow() {
+            document.getElementById('stopLight').style.backgroundColor = "black";
+            document.getElementById('goLight').style.backgroundColor = "black";
+            document.getElementById('slowLight').style.backgroundColor = "orange";
+        }
+
+        function goGreen() {
+            document.getElementById('stopLight').style.backgroundColor = "black";
+            document.getElementById('slowLight').style.backgroundColor = "black";
+            document.getElementById('goLight').style.backgroundColor = "green";
+        }
+
+
+        function clearLights() {
+            document.getElementById('stopLight').style.backgroundColor = "black";
+            document.getElementById('slowLight').style.backgroundColor = "black";
+            document.getElementById('goLight').style.backgroundColor = "black";
+            clearInterval(timerId);
+        }
+
+        function autoLights() {
+            stopRed();
+            timerId = setInterval(timer, 2000);
+        }
+
+        function timer() {
+            if (counter == 1)
+                stopRed();
+            if (counter == 2)
+                slowYellow();
+            if (counter == 3)
+                goGreen();
+            counter++
+            if (counter > 3)
+                counter = 1;
+        }
+
+    </script>
+</body>
+
+</html>
